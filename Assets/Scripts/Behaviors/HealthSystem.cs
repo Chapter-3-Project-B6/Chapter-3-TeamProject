@@ -5,7 +5,7 @@ public class HealthSystem : MonoBehaviour
 {
     private CharacterStatHandler _statHandler;
 
-    public event Action OnDamage;
+    public event Action<float> OnDamage;
     public event Action OnHeal;
     public event Action OnDeath;
     public event Action OnInvincibilityEnd;
@@ -63,7 +63,7 @@ public class HealthSystem : MonoBehaviour
         }
         else
         {
-            OnDamage?.Invoke();
+            OnDamage?.Invoke(CurrentHealth);
             _isAttacked = true;
         }
 

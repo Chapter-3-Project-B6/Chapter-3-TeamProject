@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
 
     public Transform player { get; private set; }
 
-    public ObjectPool objectPool { get; private set; }
-
     private void Awake()
     {
         if(instance != null)

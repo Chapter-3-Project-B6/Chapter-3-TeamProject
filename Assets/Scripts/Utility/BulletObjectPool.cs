@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class BulletObjectPool : MonoBehaviour
 {
     [Serializable]
     public class Pool

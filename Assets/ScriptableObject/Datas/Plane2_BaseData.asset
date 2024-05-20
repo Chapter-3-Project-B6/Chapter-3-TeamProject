@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d40cdbc4c3a90e468d2f507426fd114, type: 3}
   m_Name: Plane2_BaseData
   m_EditorClassIdentifier: 
-  health: 5
-  speed: 7.5
+  health: 10
+  speed: 2.5
   attackDelay: 0.15
-  attackPower: 2
+  attackPower: 1
   attackSpeed: 5
   target:
     serializedVersion: 2
@@ -24,6 +24,6 @@ MonoBehaviour:
   size: 1
   duration: 5
   spread: 4
-  numberOfProjectiles: 1
+  numberOfProjectiles: 2
   projectilesAngle: 7
   projectileColor: {r: 1, g: 1, b: 1, a: 1}
