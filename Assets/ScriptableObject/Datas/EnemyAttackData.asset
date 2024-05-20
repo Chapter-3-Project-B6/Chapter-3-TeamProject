@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d40cdbc4c3a90e468d2f507426fd114, type: 3}
   m_Name: EnemyAttackData
   m_EditorClassIdentifier: 
-  size: 1
-  delay: 0.5
-  power: 1
-  speed: 10
+  health: 1
+  speed: 1
+  attackDelay: 0
+  attackPower: 0
+  attackSpeed: 0
   target:
     serializedVersion: 2
     m_Bits: 64
-  bulletNameTag: Bullet
+  nameTag: 
+  size: 1
   duration: 5
   spread: 4
-  numberofProjectilesPerShot: 1
-  multipleProjectilesAngel: 7
+  numberOfProjectiles: 0
+  projectilesAngle: 0
   projectileColor: {r: 1, g: 1, b: 1, a: 1}

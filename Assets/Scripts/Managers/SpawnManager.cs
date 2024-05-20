@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
     public Transform Player { get; private set; }
     public ObjectPool ObjectPool { get; private set; }
 
+    public EnemyObjectPool EnemyObjectPool { get; private set; }
     private void Awake()
     {
         if (instance == null)
@@ -20,5 +21,6 @@ public class SpawnManager : MonoBehaviour
         }
 
         ObjectPool = GetComponent<ObjectPool>();
+        EnemyObjectPool = GetComponent<EnemyObjectPool>();
     }
 }
