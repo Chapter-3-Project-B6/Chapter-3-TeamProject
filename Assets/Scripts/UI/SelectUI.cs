@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
+using System.Data;
 
 public class SelectUI : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class SelectUI : MonoBehaviour
     //솔로모드에 커서를 가져다 댈 경우 최고점수가 보임
 
     [SerializeField] private TextMeshProUGUI BestScoreText;
+    public Sprite[] characterImages;
+    public Image selectedCharacter;
 
     private void Start()
     {
@@ -24,10 +28,18 @@ public class SelectUI : MonoBehaviour
         BestScoreText.text = "Best Score: " + BestScore; // 최고 점수를 UI Text에 표시합니다.
     }
 
-    public void SoloModeBtn()
+    public void ChoiceCharacter(int num)
+    {
+        selectedCharacter.sprite = characterImages[num];
+        DataManager.instance.characterNum = num;
+        
+    }
+
+    public void GoBtn()
     {
         SceneManager.LoadScene("PlayerTestScene");
     }
+
 
     public void CoOpBtn()
     {
