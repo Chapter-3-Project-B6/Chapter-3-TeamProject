@@ -899,6 +899,9 @@ MonoBehaviour:
   - tag: Enemy
     enemyPrefab: {fileID: 4037823802497018872, guid: 9d772ff7f9126064c9ff872ab520ca08, type: 3}
     poolsize: 10
+  - tag: RangeEnemy
+    enemyPrefab: {fileID: 737525561346780568, guid: 3df3fe0c884a27140a863dd133e5b3f7, type: 3}
+    poolsize: 5
 --- !u!114 &8796559220479478262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cbf9f739aedd14c8479fd1472b4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTag: Enemy
+  enemyTag: Enemy
+  rangeEnemyTag: RangeEnemy
   spawnAreaSize: {x: 20, y: 10}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

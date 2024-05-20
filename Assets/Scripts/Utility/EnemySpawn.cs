@@ -6,7 +6,9 @@ public class EnemySpawn : MonoBehaviour
 {
     EnemyController enemyController;
 
-    public string nameTag;
+    public string enemyTag;
+    public string rangeEnemyTag;
+
 
     public Vector2 spawnAreaSize = new Vector2(20f, 10f);
 
@@ -14,20 +16,35 @@ public class EnemySpawn : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnEnemy(nameTag));
+        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnRangeEnemy());
     }
 
-    private IEnumerator SpawnEnemy(string nameTag)
+    private IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            GameObject obj = SpawnManager.instance.EnemyObjectPool.GetEnemy(nameTag, false);
+            GameObject enemy = SpawnManager.instance.EnemyObjectPool.GetEnemy(enemyTag, false);
 
             Vector2 spawnPosition = GetSpawnPosition();
-            obj.transform.position = spawnPosition;
-            obj.SetActive(true);
+            enemy.transform.position = spawnPosition;
+            enemy.SetActive(true);
 
             yield return new WaitForSeconds(spawnTime);
+        }
+    }
+
+    private IEnumerator SpawnRangeEnemy()
+    {
+        while (true)
+        {
+            GameObject rangeEnemy = SpawnManager.instance.EnemyObjectPool.GetEnemy(rangeEnemyTag, false);
+
+            Vector2 spawnPosition = GetSpawnPosition();
+            rangeEnemy.transform.position = spawnPosition;
+            rangeEnemy.SetActive(true);
+
+            yield return new WaitForSeconds(spawnTime + 1f);
         }
     }
 

@@ -11,7 +11,7 @@ public class EnemyObjectPool : MonoBehaviour
     {
         public string tag;
         public GameObject enemyPrefab;
-        public int poolsize = 10;
+        public int poolsize;
     }
 
     public List<Pool> pools = new List<Pool>();
