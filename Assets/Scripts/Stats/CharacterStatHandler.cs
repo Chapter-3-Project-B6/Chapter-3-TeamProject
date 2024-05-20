@@ -16,8 +16,15 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void InitializeCharacter()
     {
-        // TODO: DataManager에서 idx 받아오기
         int idx = 0;
+
+        // TODO: DataManager에서 idx 받아오기
+        if (gameObject.CompareTag("Player"))
+        {
+            // idx = DataManager.instance.characterNum;
+            idx = 7;
+        }
+
         _characterSprite.sprite = characterSprites[idx];
         StatSO statSO = attackData[idx];
 
