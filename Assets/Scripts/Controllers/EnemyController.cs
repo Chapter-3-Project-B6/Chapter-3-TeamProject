@@ -33,8 +33,6 @@ public class EnemyController : DodgeController
 
     public Vector2 DirTarget()
     {
-        Debug.Log("CloseTarget" + closeTarget.position);
-        Debug.Log("Enemy" + transform.position);
         return (closeTarget.position - transform.position).normalized;
     }
 }
