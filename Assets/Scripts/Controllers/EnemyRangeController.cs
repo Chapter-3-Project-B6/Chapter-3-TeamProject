@@ -13,12 +13,16 @@ public class EnemyRangeController : EnemyController
     Vector2 dirTarget;
 
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         layerMaskLevel = LayerMask.NameToLayer("Level");
         layermaskTarget = statHandler.currentStat.target;
+    }
+
+    protected override void OnEnable()
+    {
         dirTarget = DirTarget();
     }
 

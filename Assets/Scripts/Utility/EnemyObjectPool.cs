@@ -5,52 +5,47 @@ using UnityEngine.UIElements;
 
 public class EnemyObjectPool : MonoBehaviour
 {
-    [SerializeField] GameObject enemyPrefab;
-    public Vector2 spawnAreaSize = new Vector2(20f, 10f);
+    [System.Serializable]
 
-    public int poolsize = 10;
-    private List<GameObject> objectPool = new List<GameObject>();
-
-    void Start()
+    public class Pool
     {
-        for(int i = 0; i < poolsize; i++)
-        {
-            GameObject enemy = Instantiate(enemyPrefab, GetSpawnPosition(), Quaternion.identity);
-            objectPool.Add(enemy);
-        }
-    }
-    /*
-    public GameObject GetEnemy()
-    {
-        foreach(GameObject enemy in objectPool)
-        {
-
-        }
-    }*/
-
-    void SpawnEnemy()
-    {
-        Vector3 spawnPosition = GetSpawnPosition();
-        
+        public string tag;
+        public GameObject enemyPrefab;
+        public int poolsize = 10;
     }
 
-    Vector3 GetSpawnPosition()
+    public List<Pool> pools = new List<Pool>();
+    public Dictionary<string, Queue<GameObject>> poolDictionary;
+
+
+    void Awake()
     {
-        Vector3 spawnPosition = Vector3.zero;
-
-        spawnPosition = new Vector3(Random.Range(-spawnAreaSize.x / 2f, spawnAreaSize.x / 2f), Random.Range(-spawnAreaSize.y / 2f, spawnAreaSize.y / 2f), 0f);
-        if(Mathf.Abs(spawnPosition.x) < spawnAreaSize.x / 2f)
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        foreach (var pool in pools)
         {
-            if(spawnPosition.x > 0f)
+            Queue<GameObject> queue = new Queue<GameObject>();
+            for (int i = 0; i < pool.poolsize; i++)
             {
-                spawnPosition.x += 10f;
+                GameObject enemy = Instantiate(pool.enemyPrefab);
+                enemy.SetActive(false);
+                queue.Enqueue(enemy);
             }
-
-            else
-            {
-                spawnPosition.x -= 10f;
-            }
+            poolDictionary.Add(pool.tag, queue);
         }
-        return spawnPosition;
+
+    }
+    
+    public GameObject GetEnemy(string tag, bool isActive)
+    {
+        if(!poolDictionary.ContainsKey(tag))
+        {
+            return null;
+        }
+
+        GameObject obj = poolDictionary[tag].Dequeue();
+        poolDictionary[tag].Enqueue(obj);
+
+        obj.SetActive(isActive);
+        return obj;
     }
 }

@@ -11,7 +11,6 @@ public class CharacterStatHandler : MonoBehaviour
     private void Awake()
     {
         _characterSprite = GetComponentInChildren<SpriteRenderer>();
-        Debug.Log("InitializeCharacter");
         InitializeCharacter();
     }
 
