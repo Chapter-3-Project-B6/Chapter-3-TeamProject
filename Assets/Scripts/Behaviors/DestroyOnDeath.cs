@@ -21,7 +21,7 @@ public class DestroyOnDeath : MonoBehaviour
         if (gameObject.CompareTag("Enemy"))
         {
             // TODO: 적 기체에 따라 스코어 중가
-
+            GameManager.instance.Player1Score += 100;
         }
 
         _rigidbody.velocity = Vector2.zero;

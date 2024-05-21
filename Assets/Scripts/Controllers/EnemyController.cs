@@ -12,7 +12,7 @@ public class EnemyController : DodgeController
     {
         base.Awake();
         gameManager = GameManager.instance;
-        closeTarget = gameManager.player;
+        closeTarget = gameManager.Player;
     }
 
     protected virtual void OnEnable()
