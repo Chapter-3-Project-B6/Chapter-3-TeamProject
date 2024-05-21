@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d40cdbc4c3a90e468d2f507426fd114, type: 3}
-  m_Name: EnemyAttackData
+  m_Name: EnemyContactAttackData
   m_EditorClassIdentifier: 
   health: 1
-  speed: 1
-  objectName: Enemy
-  attackDelay: 0
-  attackPower: 0
-  attackSpeed: 0
+  speed: 5
+  attackDelay: 1
+  attackPower: 1
+  attackSpeed: 7
   target:
     serializedVersion: 2
     m_Bits: 64
-  nameTag: 
+  nameTag: Bullet
   size: 1
   duration: 5
-  spread: 4
-  numberOfProjectiles: 0
+  spread: 1
+  numberOfProjectiles: 1
   projectilesAngle: 0
   projectileColor: {r: 1, g: 1, b: 1, a: 1}

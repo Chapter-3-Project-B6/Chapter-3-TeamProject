@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-public class EnemyRangeController : EnemyController
+public class EnemyContactController : EnemyController
 {
-    [SerializeField][Range(0f, 100f)] private float shootRange = 10f;
     [SerializeField] private GameObject explosion;
+    [SerializeField][Range(0f, 100f)] private float shootRange = 10f;
 
     CharacterStat currentStat;
     HealthSystem healthSystem;
@@ -14,11 +14,9 @@ public class EnemyRangeController : EnemyController
 
     Vector2 dirTarget;
 
-    // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
-
         layermaskTarget = statHandler.currentStat.target;
         healthSystem = GetComponent<HealthSystem>();
     }
@@ -26,7 +24,7 @@ public class EnemyRangeController : EnemyController
     protected override void OnEnable()
     {
         dirTarget = DirTarget();
-        //healthSystem.ChangeHealth(statHandler.currentStat.health = 5);
+        healthSystem.ChangeHealth(statHandler.currentStat.health = 1);
     }
 
     protected override void FixedUpdate()
@@ -36,7 +34,7 @@ public class EnemyRangeController : EnemyController
 
         CallMoveEvent(dirTarget);
         CallLookEvent(dirTarget);
-        EnemyState(distanceTarget);
+        CheckNear(distanceTarget);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,22 +43,20 @@ public class EnemyRangeController : EnemyController
         {
             if (healthSystem != null)
             {
-                healthSystem.ChangeHealth(statHandler.currentStat.health -= 5);
+                healthSystem.ChangeHealth(statHandler.currentStat.health -= 1);
                 GameObject obj = Instantiate(explosion);
                 obj.transform.position = this.transform.position;
                 gameObject.SetActive(false);
                 Destroy(obj, 0.3f);
             }
-
         }
     }
 
-    private void EnemyState(float distanceTarget)
+    private bool IsLayerMatched(int layerMask, int objectLayer)
     {
-        IsAttacking = false;
-        CheckNear(distanceTarget);
+        return layerMask == (layerMask | (1 << objectLayer));
     }
-    
+
     private void CheckNear(float distnace)
     {
         if (distnace <= shootRange)
@@ -72,11 +68,5 @@ public class EnemyRangeController : EnemyController
     private void ShootTarget(Vector2 dir)
     {
         IsAttacking = true;
-    }
-
-
-    private bool IsLayerMatched(int layerMask, int objectLayer)
-    {
-        return layerMask == (layerMask | (1 << objectLayer));
     }
 }

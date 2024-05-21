@@ -1310,18 +1310,18 @@ MonoBehaviour:
     projectilesAngle: 0
     projectileColor: {r: 0, g: 0, b: 0, a: 0}
   attackData:
+  - {fileID: 11400000, guid: 81e8b3b7a6dd46a408b09b1aca1d7360, type: 2}
   - {fileID: 11400000, guid: c9c130e1802db7e42b4b711bc32a4543, type: 2}
   - {fileID: 11400000, guid: e929176a713d59b41a18e4a88f247387, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
+  - {fileID: 11400000, guid: 878dbe496f4f4424ea8ea033fa884e6b, type: 2}
+  - {fileID: 11400000, guid: 11251b4ffbb91d946a55807eed53f452, type: 2}
+  - {fileID: 11400000, guid: 5b3733e0667c57348bacdb5a51566911, type: 2}
+  - {fileID: 11400000, guid: eb3ab8f385e32854f801e1557f410917, type: 2}
+  - {fileID: 11400000, guid: ff369e95977438a4abed3caa47872639, type: 2}
+  - {fileID: 11400000, guid: ad3178d549332694ab144ec49d649b0b, type: 2}
+  - {fileID: 11400000, guid: a36896844f3c86b4cb71cfc963340de6, type: 2}
+  - {fileID: 11400000, guid: c5be693256745f04080b285301acb609, type: 2}
+  - {fileID: 11400000, guid: 2a36d77166ad901468408afcacfe8757, type: 2}
   characterSprites:
   - {fileID: 21300000, guid: da29474507194574fbda577caf0692a0, type: 3}
   - {fileID: 21300000, guid: 2d241cf4bc109a248b7348f2972894bf, type: 3}
@@ -1572,6 +1572,9 @@ MonoBehaviour:
   - tag: Enemy
     enemyPrefab: {fileID: 4037823802497018872, guid: 9d772ff7f9126064c9ff872ab520ca08, type: 3}
     poolsize: 10
+  - tag: RangeEnemy
+    enemyPrefab: {fileID: 737525561346780568, guid: 3df3fe0c884a27140a863dd133e5b3f7, type: 3}
+    poolsize: 5
 --- !u!114 &8796559220479478262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,7 +1587,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cbf9f739aedd14c8479fd1472b4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameTag: Enemy
+  enemyTag: Enemy
+  rangeEnemyTag: RangeEnemy
   spawnAreaSize: {x: 20, y: 10}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
