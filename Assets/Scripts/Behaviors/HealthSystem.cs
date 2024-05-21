@@ -20,13 +20,11 @@ public class HealthSystem : MonoBehaviour
     private void Awake()
     {
         _statHandler = GetComponent<CharacterStatHandler>();
-        Debug.Log($"_statHandler initialized: {_statHandler != null}");
     }
 
     private void Start()
     {
         CurrentHealth = _statHandler.currentStat.health;
-        Debug.Log($"CurrentHealth initialized: {CurrentHealth}");
     }
 
     private void Update()

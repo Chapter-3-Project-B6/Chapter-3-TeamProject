@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 10
   explosion: {fileID: 4334096451674141107, guid: 2b223484e0e7eed47a7249c0fe1195a0, type: 3}
+  bullet: {fileID: 0}
 --- !u!114 &2837439784592635238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +88,7 @@ MonoBehaviour:
     target:
       serializedVersion: 2
       m_Bits: 64
-    nameTag: Bullet
+    nameTag: EnemyBullet
     size: 1
     duration: 5
     spread: 0

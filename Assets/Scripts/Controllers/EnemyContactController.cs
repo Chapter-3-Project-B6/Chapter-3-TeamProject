@@ -46,6 +46,14 @@ public class EnemyContactController : EnemyController
             gameObject.SetActive(false);
             Destroy(obj, 0.3f);
         }
+
+        if (collision.tag == "Bullet")
+        {
+            GameObject obj = Instantiate(explosion);
+            obj.transform.position = this.transform.position;
+            gameObject.SetActive(false);
+            Destroy(obj, 0.3f);
+        }
     }
 
     private bool IsLayerMatched(int layerMask, int objectLayer)

@@ -724,6 +724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+  Player1ScoreText: {fileID: 0}
+  Player1Score: 0
 --- !u!1 &1954574992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1155,9 @@ MonoBehaviour:
   pools:
   - prefab: {fileID: 4471330366018569568, guid: 34bcc41c6e91f1546b4d42bc4cb7c746, type: 3}
     tag: Bullet
+    poolSize: 50
+  - prefab: {fileID: 4471330366018569568, guid: 6aabe50d1f4e3c84483283ae163b595e, type: 3}
+    tag: EnemyBullet
     poolSize: 50
 --- !u!114 &2660708341138399236
 MonoBehaviour:
