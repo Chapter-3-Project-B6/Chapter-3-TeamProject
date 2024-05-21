@@ -37,7 +37,7 @@ public class SelectUI : MonoBehaviour
 
     public void GoBtn()
     {
-        SceneManager.LoadScene("PlayerTestScene");
+        SceneManager.LoadScene("MainScene");
     }
 
 
