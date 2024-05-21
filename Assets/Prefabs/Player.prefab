@@ -192,10 +192,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f221833b67dbf46b322991432fd3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStat:
+    health: 0
+    speed: 0
+    attackDelay: 0
+    attackPower: 0
+    attackSpeed: 0
+    target:
+      serializedVersion: 2
+      m_Bits: 0
+    nameTag: 
+    size: 0
+    duration: 0
+    spread: 0
+    numberOfProjectiles: 0
+    projectilesAngle: 0
+    projectileColor: {r: 0, g: 0, b: 0, a: 0}
   attackData:
   - {fileID: 11400000, guid: c9c130e1802db7e42b4b711bc32a4543, type: 2}
   - {fileID: 11400000, guid: e929176a713d59b41a18e4a88f247387, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
+  - {fileID: 11400000, guid: 878dbe496f4f4424ea8ea033fa884e6b, type: 2}
   characterSprites:
   - {fileID: 21300000, guid: 0a22f00e57c9ec044961157120ae8030, type: 3}
   - {fileID: 21300000, guid: 1485a79b74260b9438932b74d1c51fac, type: 3}
