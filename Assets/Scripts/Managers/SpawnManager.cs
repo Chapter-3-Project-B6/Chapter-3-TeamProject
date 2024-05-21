@@ -5,7 +5,7 @@ public class SpawnManager : MonoBehaviour
     public static SpawnManager instance;
 
     public Transform Player { get; private set; }
-    public ObjectPool ObjectPool { get; private set; }
+    public BulletObjectPool ObjectPool { get; private set; }
 
     public EnemyObjectPool EnemyObjectPool { get; private set; }
     private void Awake()
@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        ObjectPool = GetComponent<ObjectPool>();
+        ObjectPool = GetComponent<BulletObjectPool>();
         EnemyObjectPool = GetComponent<EnemyObjectPool>();
     }
 }

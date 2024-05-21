@@ -9,18 +9,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8625065178031309664}
-  - component: {fileID: 290452993748476518}
   - component: {fileID: 1737760790057331355}
   - component: {fileID: 8714258418729131573}
-  - component: {fileID: 7999709308863049394}
   - component: {fileID: 8059668070581089680}
   - component: {fileID: 5200599356013090118}
   - component: {fileID: 5151658730086914334}
   - component: {fileID: 2341571726069237236}
-  - component: {fileID: 8704570291215452367}
+  - component: {fileID: -7068259721507084459}
+  - component: {fileID: 1925732975169861290}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,26 +33,13 @@ Transform:
   m_GameObject: {fileID: 4037823802497018872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.48, y: 1.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2498569831556937264}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &290452993748476518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4037823802497018872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6779711dedaffe4c80ff086aab53690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootRange: 5
 --- !u!114 &1737760790057331355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,18 +79,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7999709308863049394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4037823802497018872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a04b3dd8b437f94ca96ebf35a374ef8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8059668070581089680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +91,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f221833b67dbf46b322991432fd3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStat:
+    health: 1
+    speed: 3
+    attackDelay: 1
+    attackPower: 1
+    attackSpeed: 5
+    target:
+      serializedVersion: 2
+      m_Bits: 64
+    nameTag: Bullet
+    size: 1
+    duration: 5
+    spread: 4
+    numberOfProjectiles: 1
+    projectilesAngle: 0
+    projectileColor: {r: 1, g: 1, b: 1, a: 1}
   attackData:
   - {fileID: 11400000, guid: d92c4a232d16293459cc9b82e90ba1f0, type: 2}
   characterSprites:
@@ -164,7 +154,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0061831474, y: 0.0015457273}
@@ -192,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d1ebae983efb6448fe047dd56fdbd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8704570291215452367
+--- !u!114 &-7068259721507084459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,7 +191,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4037823802497018872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fae80260f7671244b1f5053ed312339, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e275fdd967dbd648a4782caf059f828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 4334096451674141107, guid: 2b223484e0e7eed47a7249c0fe1195a0, type: 3}
+  shootRange: 10
+--- !u!114 &1925732975169861290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037823802497018872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df88cd01f8fb3294f8261ad7a79b1996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5816883348299395236
@@ -215,7 +219,7 @@ GameObject:
   - component: {fileID: 2498569831556937264}
   - component: {fileID: 366199632565883062}
   m_Layer: 7
-  m_Name: Circle
+  m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

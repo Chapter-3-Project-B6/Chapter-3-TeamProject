@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Properties;
 using UnityEngine;
 
 public class EnemyController : DodgeController
@@ -10,12 +11,13 @@ public class EnemyController : DodgeController
     protected override void Awake()
     {
         base.Awake();
-    }
-
-    protected virtual void Start()
-    {
         gameManager = GameManager.instance;
         closeTarget = gameManager.player;
+    }
+
+    protected virtual void OnEnable()
+    {
+
     }
 
     protected virtual void FixedUpdate()
@@ -29,7 +31,7 @@ public class EnemyController : DodgeController
         return Vector3.Distance(transform.position, closeTarget.position);
     }
 
-    protected Vector2 DirTarget()
+    public Vector2 DirTarget()
     {
         return (closeTarget.position - transform.position).normalized;
     }

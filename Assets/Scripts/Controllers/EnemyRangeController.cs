@@ -6,20 +6,27 @@ using UnityEngine;
 public class EnemyRangeController : EnemyController
 {
     [SerializeField][Range(0f, 100f)] private float shootRange = 10f;
+    [SerializeField] private GameObject explosion;
 
-    private int layerMaskLevel;
+    CharacterStat currentStat;
+    HealthSystem healthSystem;
     private int layermaskTarget;
 
     Vector2 dirTarget;
 
     // Start is called before the first frame update
-    protected override void Start()
+    protected override void Awake()
     {
-        base.Start();
+        base.Awake();
 
-        layerMaskLevel = LayerMask.NameToLayer("Level");
         layermaskTarget = statHandler.currentStat.target;
+        healthSystem = GetComponent<HealthSystem>();
+    }
+
+    protected override void OnEnable()
+    {
         dirTarget = DirTarget();
+        //healthSystem.ChangeHealth(statHandler.currentStat.health = 5);
     }
 
     protected override void FixedUpdate()
@@ -30,6 +37,22 @@ public class EnemyRangeController : EnemyController
         CallMoveEvent(dirTarget);
         CallLookEvent(dirTarget);
         EnemyState(distanceTarget);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
+        {
+            if (healthSystem != null)
+            {
+                healthSystem.ChangeHealth(statHandler.currentStat.health -= 5);
+                GameObject obj = Instantiate(explosion);
+                obj.transform.position = this.transform.position;
+                gameObject.SetActive(false);
+                Destroy(obj, 0.3f);
+            }
+
+        }
     }
 
     private void EnemyState(float distanceTarget)
@@ -44,35 +67,16 @@ public class EnemyRangeController : EnemyController
         {
             ShootTarget(dirTarget);
         }
-
-        if (transform.position.x < -10f || transform.position.x > 10f || transform.position.y > 6f || transform.position.y < -6f)
-        {
-            //Destroy(gameObject);
-        }
     }
 
     private void ShootTarget(Vector2 dir)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, shootRange, GetLayerMaskRaycast());
-
-        if (isTargetHit(hit))
-        {
-            AttackAction(dir);
-        }
-    }
-
-    private int GetLayerMaskRaycast()
-    {
-        return layermaskTarget;
-    }
-
-    private bool isTargetHit(RaycastHit2D hit)
-    {
-        return hit.collider != null && layermaskTarget == (layermaskTarget | (1 << hit.collider.gameObject.layer));
-    }
-
-    private void AttackAction(Vector2 dir)
-    {
         IsAttacking = true;
+    }
+
+
+    private bool IsLayerMatched(int layerMask, int objectLayer)
+    {
+        return layerMask == (layerMask | (1 << objectLayer));
     }
 }
