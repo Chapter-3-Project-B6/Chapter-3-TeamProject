@@ -6,10 +6,17 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private string playerTag;
 
+
     public Transform Player { get; private set; }
     public TMP_Text player1ScoreText;
 
     public int Player1Score;
+
+    
+    public TextMeshProUGUI timeTxt;
+    private float Timer = 0f;
+
+
 
     private void Awake()
     {
@@ -31,5 +38,11 @@ public class GameManager : MonoBehaviour
         }
 
         player1ScoreText.text = Player1Score.ToString("D6");
+
+        Timer += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(Timer / 60F);
+        int seconds = Mathf.FloorToInt(Timer % 60F);
+
+        timeTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 }

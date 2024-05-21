@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Threading;
+using TMPro;
 
 public class DestroyOnDeath : MonoBehaviour
 {
@@ -25,7 +27,10 @@ public class DestroyOnDeath : MonoBehaviour
             component.enabled = false;
         }
 
-        gameObject.SetActive(false);
-        Destroy(gameObject);
+        
     }
+
+
+
+
 }
