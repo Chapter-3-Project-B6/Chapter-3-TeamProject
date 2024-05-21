@@ -11,11 +11,20 @@ public enum Item_Type
 
 public class Item : MonoBehaviour
 {
+    [SerializeField]
+    private Item_Type type;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == 6)
         {
-            Debug.Log("Ãæµ¹");
+            switch (type)
+            {
+                case Item_Type.IT_Heart:
+                    if (collision.TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
+                        healthSystem.ChangeHealth(3);
+                        break;
+            }
         }
     }
 }
