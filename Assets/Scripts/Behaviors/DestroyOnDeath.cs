@@ -18,12 +18,6 @@ public class DestroyOnDeath : MonoBehaviour
 
     private void OnDeath()
     {
-        if (gameObject.CompareTag("Enemy"))
-        {
-            // TODO: 적 기체에 따라 스코어 중가
-
-        }
-
         _rigidbody.velocity = Vector2.zero;
 
         foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>())
@@ -32,6 +26,6 @@ public class DestroyOnDeath : MonoBehaviour
         }
 
         gameObject.SetActive(false);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

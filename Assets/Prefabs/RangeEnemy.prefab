@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5337026116275658071}
+  - component: {fileID: 428478155461494026}
+  - component: {fileID: 5403234986396802380}
   - component: {fileID: 3638004139212129799}
   - component: {fileID: 1448363570864817231}
   - component: {fileID: 2837439784592635238}
   - component: {fileID: 4036063028876948291}
   - component: {fileID: 8425301268048669283}
-  - component: {fileID: 428478155461494026}
-  - component: {fileID: 5403234986396802380}
   - component: {fileID: -821294054507747003}
   m_Layer: 7
   m_Name: RangeEnemy
@@ -40,91 +40,6 @@ Transform:
   - {fileID: 6057596809927885127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3638004139212129799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737525561346780568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca21d7346ca5594c95f6d47ffa78b73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1448363570864817231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737525561346780568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6779711dedaffe4c80ff086aab53690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootRange: 10
-  explosion: {fileID: 4334096451674141107, guid: 2b223484e0e7eed47a7249c0fe1195a0, type: 3}
-  bullet: {fileID: 0}
---- !u!114 &2837439784592635238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737525561346780568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f221833b67dbf46b322991432fd3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentStat:
-    health: 5
-    speed: 3
-    attackDelay: 2
-    attackPower: 1
-    attackSpeed: 5
-    target:
-      serializedVersion: 2
-      m_Bits: 64
-    nameTag: EnemyBullet
-    size: 1
-    duration: 5
-    spread: 0
-    numberOfProjectiles: 1
-    projectilesAngle: 0
-    projectileColor: {r: 1, g: 1, b: 1, a: 0}
-  attackData:
-  - {fileID: 11400000, guid: aa0c800bfbec37c4cb77a0db2de2af8c, type: 2}
-  characterSprites:
-  - {fileID: 21300000, guid: ec59682f85af2c143adad23fa40dcaec, type: 3}
---- !u!114 &4036063028876948291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737525561346780568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0933c577cadeee646aeea94ef63430db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterRenderer: {fileID: 5327646515738450971}
-  _characterPivot: {fileID: 5337026116275658071}
---- !u!114 &8425301268048669283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737525561346780568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d1ebae983efb6448fe047dd56fdbd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &428478155461494026
 Rigidbody2D:
   serializedVersion: 4
@@ -197,6 +112,90 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42014012, y: 0.5425551}
   m_EdgeRadius: 0
+--- !u!114 &3638004139212129799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737525561346780568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca21d7346ca5594c95f6d47ffa78b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1448363570864817231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737525561346780568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6779711dedaffe4c80ff086aab53690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRange: 10
+  explosion: {fileID: 4334096451674141107, guid: 2b223484e0e7eed47a7249c0fe1195a0, type: 3}
+--- !u!114 &2837439784592635238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737525561346780568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f221833b67dbf46b322991432fd3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentStat:
+    health: 5
+    speed: 3
+    attackDelay: 2
+    attackPower: 1
+    attackSpeed: 5
+    target:
+      serializedVersion: 2
+      m_Bits: 64
+    nameTag: EnemyBullet
+    size: 1
+    duration: 5
+    spread: 0
+    numberOfProjectiles: 1
+    projectilesAngle: 0
+    projectileColor: {r: 1, g: 1, b: 1, a: 0}
+  attackData:
+  - {fileID: 11400000, guid: aa0c800bfbec37c4cb77a0db2de2af8c, type: 2}
+  characterSprites:
+  - {fileID: 21300000, guid: ec59682f85af2c143adad23fa40dcaec, type: 3}
+--- !u!114 &4036063028876948291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737525561346780568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0933c577cadeee646aeea94ef63430db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterRenderer: {fileID: 5327646515738450971}
+  _characterPivot: {fileID: 5337026116275658071}
+--- !u!114 &8425301268048669283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737525561346780568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d1ebae983efb6448fe047dd56fdbd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-821294054507747003
 MonoBehaviour:
   m_ObjectHideFlags: 0

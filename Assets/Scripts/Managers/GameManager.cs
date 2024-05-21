@@ -1,16 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] private string playerTag;
 
-    public Transform player { get; private set; }
-    public TMP_Text Player1ScoreText;
+    public Transform Player { get; private set; }
+    public TMP_Text player1ScoreText;
 
     public int Player1Score;
 
@@ -23,7 +20,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
 
-        player = GameObject.FindGameObjectWithTag(playerTag).transform;
+        Player = GameObject.FindGameObjectWithTag(playerTag).transform;
     }
 
     private void Update()
