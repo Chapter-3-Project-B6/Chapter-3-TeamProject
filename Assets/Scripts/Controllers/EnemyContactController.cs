@@ -24,7 +24,7 @@ public class EnemyContactController : EnemyController
     protected override void OnEnable()
     {
         dirTarget = DirTarget();
-        healthSystem.ChangeHealth(statHandler.currentStat.health = 1);
+
     }
 
     protected override void FixedUpdate()
@@ -41,14 +41,18 @@ public class EnemyContactController : EnemyController
     {
         if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
         {
-            if (healthSystem != null)
-            {
-                healthSystem.ChangeHealth(statHandler.currentStat.health -= 1);
-                GameObject obj = Instantiate(explosion);
-                obj.transform.position = this.transform.position;
-                gameObject.SetActive(false);
-                Destroy(obj, 0.3f);
-            }
+            GameObject obj = Instantiate(explosion);
+            obj.transform.position = this.transform.position;
+            gameObject.SetActive(false);
+            Destroy(obj, 0.3f);
+        }
+
+        if (collision.tag == "Bullet")
+        {
+            GameObject obj = Instantiate(explosion);
+            obj.transform.position = this.transform.position;
+            gameObject.SetActive(false);
+            Destroy(obj, 0.3f);
         }
     }
 

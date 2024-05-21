@@ -16,13 +16,12 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void InitializeCharacter()
     {
+        // TODO: 적 기체 idx 설정
         int idx = 0;
 
-        // TODO: DataManager에서 idx 받아오기
         if (gameObject.CompareTag("Player"))
         {
-            // idx = DataManager.instance.characterNum;
-            idx = 7;
+            idx = DataManager.instance.characterNum;
         }
 
         _characterSprite.sprite = characterSprites[idx];

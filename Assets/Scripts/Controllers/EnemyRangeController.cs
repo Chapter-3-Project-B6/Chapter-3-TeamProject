@@ -26,7 +26,7 @@ public class EnemyRangeController : EnemyController
     protected override void OnEnable()
     {
         dirTarget = DirTarget();
-        //healthSystem.ChangeHealth(statHandler.currentStat.health = 5);
+        healthSystem.ChangeHealth(statHandler.currentStat.health = 5);
     }
 
     protected override void FixedUpdate()
@@ -43,15 +43,18 @@ public class EnemyRangeController : EnemyController
     {
         if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
         {
-            if (healthSystem != null)
-            {
-                healthSystem.ChangeHealth(statHandler.currentStat.health -= 5);
-                GameObject obj = Instantiate(explosion);
-                obj.transform.position = this.transform.position;
-                gameObject.SetActive(false);
-                Destroy(obj, 0.3f);
-            }
+            GameObject obj = Instantiate(explosion);
+            obj.transform.position = this.transform.position;
+            gameObject.SetActive(false);
+            Destroy(obj, 0.3f);
+        }
 
+        if(collision.tag == "Bullet")
+        {
+            GameObject obj = Instantiate(explosion);
+            obj.transform.position = this.transform.position;
+            gameObject.SetActive(false);
+            Destroy(obj, 0.3f);
         }
     }
 
