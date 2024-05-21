@@ -21,6 +21,10 @@ public class SelectUI : MonoBehaviour
         LoadBestScore();
     }
 
+    public void BottonClickSfx()
+    {
+        AudioManager.instance.PlaySFX("ButtonClick");
+    }
 
     private void LoadBestScore()
     {
@@ -37,6 +41,7 @@ public class SelectUI : MonoBehaviour
 
     public void GoBtn()
     {
+        AudioManager.instance.StopBGM();
         SceneManager.LoadScene("MainScene");
     }
 

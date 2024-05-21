@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-   
+    private float delayTime = 1f;
+
     public void StartBtn()
     {
-       
-        SceneManager.LoadScene("SelectScene");
+        AudioManager.instance.PlaySFX("ButtonClick");
+        StartCoroutine(LoadSceneDelay("SelectScene", delayTime));
+    }
+
+    private IEnumerator LoadSceneDelay(string sceneName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitBtn()
