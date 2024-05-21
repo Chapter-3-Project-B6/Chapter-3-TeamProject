@@ -30,6 +30,6 @@ public class GameManager : MonoBehaviour
             Player1Score = 0;
         }
 
-        Player1ScoreText.text = Player1Score.ToString("D6");
+        player1ScoreText.text = Player1Score.ToString("D6");
     }
 }
