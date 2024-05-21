@@ -13,15 +13,28 @@ public class EnemySpawn : MonoBehaviour
     public Vector2 spawnAreaSize = new Vector2(20f, 10f);
 
     private float spawnTime = 1f;
+    private int score;
+    private bool isRangeEnemySpawn = false;
 
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
-        StartCoroutine(SpawnRangeEnemy());
+    }
+
+    private void Update()
+    {
+        score = GameManager.instance.Player1Score;
+
+        if(score > 1000 && !isRangeEnemySpawn)
+        {
+            StartCoroutine(SpawnRangeEnemy());
+            isRangeEnemySpawn = true;
+        }
     }
 
     private IEnumerator SpawnEnemy()
     {
+
         while (true)
         {
             GameObject enemy = SpawnManager.instance.EnemyObjectPool.GetEnemy(enemyTag, false);
