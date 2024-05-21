@@ -11,7 +11,7 @@ public class HealthSystem : MonoBehaviour
     public event Action OnInvincibilityEnd;
 
     public float CurrentHealth { get; private set; }
-    public float MaxHealth => _statHandler.currentStat.health;
+    public float MaxHealth => _statHandler?.currentStat?.health ?? 0;
 
     private float _healthChangeDelay = 0.5f;
     private float _timeSinceLastChange = float.MaxValue;
@@ -20,16 +20,18 @@ public class HealthSystem : MonoBehaviour
     private void Awake()
     {
         _statHandler = GetComponent<CharacterStatHandler>();
+        Debug.Log($"_statHandler initialized: {_statHandler != null}");
     }
 
     private void Start()
     {
         CurrentHealth = _statHandler.currentStat.health;
+        Debug.Log($"CurrentHealth initialized: {CurrentHealth}");
     }
 
     private void Update()
     {
-        if (_isAttacked && _timeSinceLastChange < _healthChangeDelay)
+        if (_isAttacked)
         {
             _timeSinceLastChange += Time.deltaTime;
             if (_timeSinceLastChange >= _healthChangeDelay)
@@ -42,7 +44,7 @@ public class HealthSystem : MonoBehaviour
 
     public bool ChangeHealth(float amount)
     {
-        if (_timeSinceLastChange < _healthChangeDelay)
+        if (_isAttacked)
         {
             return false;
         }
