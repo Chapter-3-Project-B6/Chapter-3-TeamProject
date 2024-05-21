@@ -27,7 +27,10 @@ public class DestroyOnDeath : MonoBehaviour
             component.enabled = false;
         }
 
-        
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+
+
     }
 
 
