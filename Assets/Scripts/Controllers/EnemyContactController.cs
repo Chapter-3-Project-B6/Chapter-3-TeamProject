@@ -31,7 +31,6 @@ public class EnemyContactController : EnemyController
     {
         base.FixedUpdate();
         float distanceTarget = DistanceTarget();
-        Debug.Log(GameManager.instance.Player1Score);
 
         CallMoveEvent(dirTarget);
         CallLookEvent(dirTarget);

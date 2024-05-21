@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1424129352580794491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1335561207914487760}
+  - component: {fileID: 2482740369011784147}
+  m_Layer: 0
+  m_Name: PoolManager 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1335561207914487760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424129352580794491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5820471, y: -1.4415246, z: 0.002449797}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2482740369011784147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424129352580794491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffa5e36de1920a4cb6fbf01e228338d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - prefab: {fileID: 4471330366018569568, guid: 34bcc41c6e91f1546b4d42bc4cb7c746, type: 3}
+    tag: Bullet
+    poolSize: 50
+  - prefab: {fileID: 4471330366018569568, guid: 6aabe50d1f4e3c84483283ae163b595e, type: 3}
+    tag: EnemyBullet
+    poolSize: 50
+  - prefab: {fileID: 4037823802497018872, guid: 9d772ff7f9126064c9ff872ab520ca08, type: 3}
+    tag: Enemy
+    poolSize: 20
+  - prefab: {fileID: 737525561346780568, guid: 3df3fe0c884a27140a863dd133e5b3f7, type: 3}
+    tag: RangeEnemy
+    poolSize: 10
+  - prefab: {fileID: 8493138816806171018, guid: ce239a91ae67e6a4d8426790deb7ca55, type: 3}
+    tag: HealItem
+    poolSize: 10

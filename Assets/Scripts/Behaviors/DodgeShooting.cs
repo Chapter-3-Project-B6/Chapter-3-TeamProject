@@ -39,7 +39,7 @@ public class DodgeShooting : MonoBehaviour
 
     private void CreateProjectile(CharacterStat currentStat, float angle)
     {
-        GameObject obj = SpawnManager.instance.ObjectPool.SpawnFromPool(currentStat.nameTag);
+        GameObject obj = ObjectPool.Instance.SpawnFromPool(currentStat.nameTag);
 
         obj.transform.position = transform.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
