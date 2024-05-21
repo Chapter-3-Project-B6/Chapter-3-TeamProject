@@ -31,6 +31,7 @@ public class EnemyContactController : EnemyController
     {
         base.FixedUpdate();
         float distanceTarget = DistanceTarget();
+        Debug.Log(GameManager.instance.Player1Score);
 
         CallMoveEvent(dirTarget);
         CallLookEvent(dirTarget);
@@ -41,6 +42,7 @@ public class EnemyContactController : EnemyController
     {
         if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
         {
+            GameManager.instance.Player1Score -= 10;
             GameObject obj = Instantiate(explosion);
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);
@@ -49,6 +51,7 @@ public class EnemyContactController : EnemyController
 
         if (collision.tag == "Bullet")
         {
+            GameManager.instance.Player1Score += 100;
             GameObject obj = Instantiate(explosion);
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);

@@ -43,6 +43,7 @@ public class EnemyRangeController : EnemyController
     {
         if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
         {
+            GameManager.instance.Player1Score += 500;
             GameObject obj = Instantiate(explosion);
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);
@@ -51,6 +52,7 @@ public class EnemyRangeController : EnemyController
 
         if(collision.tag == "Bullet")
         {
+            GameManager.instance.Player1Score += 500;
             GameObject obj = Instantiate(explosion);
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);
