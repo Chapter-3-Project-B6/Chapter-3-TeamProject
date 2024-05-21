@@ -1316,8 +1316,8 @@ MonoBehaviour:
     projectileColor: {r: 0, g: 0, b: 0, a: 0}
   attackData:
   - {fileID: 11400000, guid: 81e8b3b7a6dd46a408b09b1aca1d7360, type: 2}
+  - {fileID: 11400000, guid: c9c130e1802db7e42b4b711bc32a4543, type: 2}
   - {fileID: 11400000, guid: e929176a713d59b41a18e4a88f247387, type: 2}
-  - {fileID: 11400000, guid: 6a6d36b4e2c9cba48b071e5d9908dd65, type: 2}
   - {fileID: 11400000, guid: 878dbe496f4f4424ea8ea033fa884e6b, type: 2}
   - {fileID: 11400000, guid: 11251b4ffbb91d946a55807eed53f452, type: 2}
   - {fileID: 11400000, guid: 5b3733e0667c57348bacdb5a51566911, type: 2}

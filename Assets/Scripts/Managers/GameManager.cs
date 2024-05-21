@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(Player1Score < 0)
+        {
+            Player1Score = 0;
+        }
+
         Player1ScoreText.text = Player1Score.ToString("D6");
     }
 }

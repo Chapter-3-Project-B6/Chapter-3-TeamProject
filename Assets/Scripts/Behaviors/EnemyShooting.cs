@@ -20,7 +20,6 @@ public class EnemyShooting : MonoBehaviour
     private void OnShoot(CharacterStat currentStat)
     {
         GameObject obj = SpawnManager.instance.ObjectPool.SpawnFromPool(currentStat.nameTag);
-        Debug.Log(currentStat.nameTag);
 
         obj.transform.position = transform.position;
         ProjectileController attackController = obj.GetComponent<ProjectileController>();
