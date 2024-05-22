@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
 
     
     public TextMeshProUGUI timeTxt;
+    public TextMeshProUGUI PlayTime;
     private float Timer = 0f;
-
 
 
     private void Awake()
@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         Player = GameObject.FindGameObjectWithTag(playerTag).transform;
+    }
+
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
     }
 
     private void Update()
@@ -44,5 +49,6 @@ public class GameManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(Timer % 60F);
 
         timeTxt.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        PlayTime.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 }

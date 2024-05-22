@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Threading;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DestroyOnDeath : MonoBehaviour
 {
     private HealthSystem _healthSystem;
     private Rigidbody2D _rigidbody;
+    public GameObject endPanel;
 
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class DestroyOnDeath : MonoBehaviour
         _healthSystem.OnDeath += OnDeath;
     }
 
-    private void OnDeath()
+    public void OnDeath()
     {
         _rigidbody.velocity = Vector2.zero;
 
@@ -30,10 +32,8 @@ public class DestroyOnDeath : MonoBehaviour
         gameObject.SetActive(false);
         Destroy(gameObject);
 
-
+        Time.timeScale = 0f;
+        endPanel.SetActive(true);
     }
-
-
-
 
 }
