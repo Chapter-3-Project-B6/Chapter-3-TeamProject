@@ -31,7 +31,7 @@
 11. 폭탄의 경우 현재 생성이 된 적들을 파괴합니다.
 12. 게임이 끝난 화면에서 처음 화면으로 돌아갈지 솔로 모드로 돌아갈지 선택이 가능합니다.
 </br></br>
-## :movie_camera: [시연영상](https://www.youtube.com/watch?v=PDT2wNo7hkQ&t=225s) ##
+## :movie_camera: [시연영상](https://www.youtube.com/watch?v=PDT2wNo7hkQ&t=) ##
  
 </br></br>
 * * *
