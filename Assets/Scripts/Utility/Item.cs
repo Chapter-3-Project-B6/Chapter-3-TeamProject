@@ -40,6 +40,7 @@ public class Item : MonoBehaviour
     {
         AudioManager.instance.PlaySFX("BoomItemSFX");
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] rangeEnemys = GameObject.FindGameObjectsWithTag("RangeEnemy");
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
         for (int i = 0; i < enemys.Length; i++)
         {
