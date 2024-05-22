@@ -28,11 +28,28 @@ public class EnemyController : DodgeController
 
     protected float DistanceTarget()
     {
-        return Vector3.Distance(transform.position, closeTarget.position);
+        if(closeTarget != null)
+        {
+            return Vector3.Distance(transform.position, closeTarget.position);
+        }
+
+        else
+        {
+            return 0f;
+        }
     }
 
     public Vector2 DirTarget()
     {
-        return (closeTarget.position - transform.position).normalized;
+        if(closeTarget != null)
+        {
+            return (closeTarget.position - transform.position).normalized;
+
+        }
+
+        else
+        {
+            return Vector2.zero;
+        }
     }
 }

@@ -24,7 +24,7 @@ public class SelectUI : MonoBehaviour
 
     public void BottonClickSfx()
     {
-        AudioManager.instance.PlaySFX("ButtonClick");
+        AudioManager.instance.PlaySFX("ButtonClickSFX");
     }
 
     public void CharacterClickSfx()

@@ -21,6 +21,7 @@ public class Item : MonoBehaviour
             switch (type)
             {
                 case Item_Type.IT_Heart:
+                    AudioManager.instance.PlaySFX("HeartItemSFX");
                     if (collision.TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
                     {
                         healthSystem.ChangeHealth(3);
@@ -37,6 +38,7 @@ public class Item : MonoBehaviour
 
     public void Explosion()
     {
+        AudioManager.instance.PlaySFX("BoomItemSFX");
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
         for (int i = 0; i < enemys.Length; i++)

@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void StartBtn()
     {
-        AudioManager.instance.PlaySFX("ButtonClick");
+        AudioManager.instance.PlaySFX("ButtonClickSFX");
         SceneManager.LoadScene("SelectScene");
 
     }
