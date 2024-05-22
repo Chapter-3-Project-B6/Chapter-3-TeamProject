@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 
     public Transform Player { get; private set; }
     public TMP_Text player1ScoreText;
+    public TMP_Text ScoreText;
 
     public int Player1Score;
+    public int Score;
 
     
     public TextMeshProUGUI timeTxt;
@@ -42,7 +44,11 @@ public class GameManager : MonoBehaviour
             Player1Score = 0;
         }
 
+
         player1ScoreText.text = Player1Score.ToString("D6");
+        ScoreText.text = Player1Score.ToString("D4");
+
+
 
         Timer += Time.deltaTime;
         int minutes = Mathf.FloorToInt(Timer / 60F);

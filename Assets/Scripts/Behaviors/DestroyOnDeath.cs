@@ -32,8 +32,23 @@ public class DestroyOnDeath : MonoBehaviour
         gameObject.SetActive(false);
         Destroy(gameObject);
 
+        if (PlayerPrefs.HasKey("BestScore"))
+        {
+            int bestScore = PlayerPrefs.GetInt("BestScore");
+            if (bestScore < GameManager.instance.Player1Score)
+            {
+                PlayerPrefs.SetInt("BestScore", GameManager.instance.Player1Score);
+            }
+        }
+        else
+        {
+            PlayerPrefs.SetInt("BestScore", GameManager.instance.Player1Score);
+        }
+
         Time.timeScale = 0f;
         endPanel.SetActive(true);
+
+
     }
 
 }
