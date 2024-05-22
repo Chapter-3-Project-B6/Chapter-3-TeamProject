@@ -102,3 +102,14 @@ endPanel 작성
 적 피격 및 생존여부 확인 기능 제작
 </br>
 BGM, SFX 적용
+</br></br>
+* * *
+__소스 출처__
+</br>
+SFX : https://pixabay.com/ko/sound-effects/search/8-bit/
+</br>
+BGM : https://dova-s.jp/bgm/play12521.html
+</br>
+Plane, Bullet, Explosive ArtWork : https://thenxtguy.itch.io/pixel-planes-assets-pack
+</br>
+StartScene, SelectScene Backgorund : https://deepdreamgenerator.com/generate/from-job/8051722
