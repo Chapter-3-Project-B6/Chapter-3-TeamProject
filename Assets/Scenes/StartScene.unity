@@ -516,6 +516,11 @@ MonoBehaviour:
   sfxSource: {fileID: 910496813}
   sfxClips:
   - {fileID: 8300000, guid: 1b59bc4cf2a9c144b94739edbe4c68bb, type: 3}
+  - {fileID: 8300000, guid: 05703546fa735934c8bb69e04ab0f157, type: 3}
+  - {fileID: 8300000, guid: f3b240c2c404ad44b9e3541c878f195f, type: 3}
+  - {fileID: 8300000, guid: 19a9844994a57d243bd564b174f3822d, type: 3}
+  - {fileID: 8300000, guid: 92746361ae06a464aaa8be04c0ce595a, type: 3}
+  - {fileID: 8300000, guid: 10fe235d70d9d104ea92bc7e0c362e0e, type: 3}
 --- !u!4 &910496812
 Transform:
   m_ObjectHideFlags: 0

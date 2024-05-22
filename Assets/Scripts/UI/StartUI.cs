@@ -11,14 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
     public void StartBtn()
     {
         AudioManager.instance.PlaySFX("ButtonClick");
-        StartCoroutine(LoadSceneDelay("SelectScene", delayTime));
-    }
+        SceneManager.LoadScene("SelectScene");
 
-    private IEnumerator LoadSceneDelay(string sceneName, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitBtn()

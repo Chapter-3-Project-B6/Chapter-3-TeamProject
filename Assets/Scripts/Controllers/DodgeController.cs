@@ -48,6 +48,11 @@ public class DodgeController : MonoBehaviour
         {
             _timeSinceLastAttack = 0f;
             CallAttackEvent(statHandler.currentStat);
+
+            if(statHandler.currentStat.nameTag == "Bullet")
+            {
+                AudioManager.instance.PlaySFX("PlayerAttackSFX");
+            }
         }
     }
 }

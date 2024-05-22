@@ -31,7 +31,6 @@ public class EnemyContactController : EnemyController
     {
         base.FixedUpdate();
         float distanceTarget = DistanceTarget();
-        Debug.Log(GameManager.instance.Player1Score);
 
         CallMoveEvent(dirTarget);
         CallLookEvent(dirTarget);
@@ -40,6 +39,7 @@ public class EnemyContactController : EnemyController
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (IsLayerMatched(statHandler.currentStat.target.value, collision.gameObject.layer))
         {
             GameManager.instance.Player1Score -= 10;
@@ -47,6 +47,7 @@ public class EnemyContactController : EnemyController
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);
             Destroy(obj, 0.3f);
+            AudioManager.instance.PlaySFX("EnemyDestroySFX");
         }
 
         if (collision.tag == "Bullet")
@@ -56,6 +57,7 @@ public class EnemyContactController : EnemyController
             obj.transform.position = this.transform.position;
             gameObject.SetActive(false);
             Destroy(obj, 0.3f);
+            AudioManager.instance.PlaySFX("EnemyDestroySFX");
         }
     }
 

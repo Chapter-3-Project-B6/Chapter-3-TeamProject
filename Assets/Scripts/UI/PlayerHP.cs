@@ -15,10 +15,12 @@ public class PlayerHP : MonoBehaviour
     private void ChangeHealth(float currentHealth)
     {
         playerHP.fillAmount = currentHealth / healthSystem.MaxHealth;
+        AudioManager.instance.PlaySFX("PlayerHitSFX");
     }
 
     private void ChangeHealthOnDeath()
     {
         playerHP.fillAmount = 0f;
+        AudioManager.instance.PlaySFX("PlayerDeathSFX");
     }
 }

@@ -15,6 +15,7 @@ public class SelectUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI BestScoreText;
     public Sprite[] characterImages;
     public Image selectedCharacter;
+    public AudioClip selectMenuBGM;
 
     private void Start()
     {
@@ -24,6 +25,16 @@ public class SelectUI : MonoBehaviour
     public void BottonClickSfx()
     {
         AudioManager.instance.PlaySFX("ButtonClick");
+    }
+
+    public void CharacterClickSfx()
+    {
+        AudioManager.instance.PlaySFX("SelectCharacterSFX");
+    }
+
+    public void SecelectMusicChange()
+    {
+        AudioManager.instance.PlayBGM(selectMenuBGM);
     }
 
     private void LoadBestScore()
