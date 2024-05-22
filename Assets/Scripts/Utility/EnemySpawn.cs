@@ -24,7 +24,6 @@ public class EnemySpawn : MonoBehaviour
     private void Update()
     {
         score = GameManager.instance.Player1Score;
-
         if(score > 1000 && !isRangeEnemySpawn)
         {
             StartCoroutine(SpawnRangeEnemy());
@@ -34,7 +33,6 @@ public class EnemySpawn : MonoBehaviour
 
     private IEnumerator SpawnEnemy()
     {
-
         while (true)
         {
             GameObject enemy = ObjectPool.Instance.GetEnemy(enemyTag, false);
@@ -51,7 +49,7 @@ public class EnemySpawn : MonoBehaviour
     {
         while (true)
         {
-            GameObject rangeEnemy = ObjectPool.Instance.GetEnemy(enemyTag, false);
+            GameObject rangeEnemy = ObjectPool.Instance.GetEnemy(rangeEnemyTag, false);
 
             Vector2 spawnPosition = GetSpawnPosition();
             rangeEnemy.transform.position = spawnPosition;
