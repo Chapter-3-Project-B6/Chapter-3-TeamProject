@@ -47,7 +47,14 @@ public class Item : MonoBehaviour
             if (enemys[i].TryGetComponent<EnemyContactController>(out EnemyContactController enemy))
                 enemy.OnDie();
         }
-        for (int i = 0; i < enemyBullets.Length; i++)
+
+        for (int i = 0; i < rangeEnemys.Length; i++)
+        {
+            if (rangeEnemys[i].TryGetComponent<EnemyRangeController>(out EnemyRangeController rangeEnemy))
+                rangeEnemy.OnDie();
+        }
+
+            for (int i = 0; i < enemyBullets.Length; i++)
         {
             enemyBullets[i].SetActive(false);
         }

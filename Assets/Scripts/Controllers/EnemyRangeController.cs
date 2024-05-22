@@ -54,11 +54,7 @@ public class EnemyRangeController : EnemyController
 
         if (collision.tag == "Bullet")
         {
-            GameManager.instance.Player1Score += 500;
-            GameObject obj = Instantiate(explosion);
-            obj.transform.position = this.transform.position;
-            gameObject.SetActive(false);
-            Destroy(obj, 0.3f);
+            OnDie();
             AudioManager.instance.PlaySFX("EnemyDestroySFX");
         }
     }
@@ -82,6 +78,33 @@ public class EnemyRangeController : EnemyController
         IsAttacking = true;
     }
 
+    public void OnDie()
+    {
+        GameManager.instance.Player1Score += 100;
+        GameObject obj = Instantiate(explosion);
+        obj.transform.position = this.transform.position;
+        gameObject.SetActive(false);
+        DropItem();
+        Destroy(obj, 0.3f);
+    }
+
+    private int randCount;
+    private void DropItem()
+    {
+        randCount = Random.Range(0, 100);
+        GameObject obj;
+
+        if (randCount < 10)
+        {
+            obj = ObjectPool.Instance.SpawnFromPool("HealItem");
+            obj.transform.position = transform.position;
+        }
+        else if (randCount < 20)
+        {
+            obj = ObjectPool.Instance.SpawnFromPool("Bomb");
+            obj.transform.position = transform.position;
+        }
+    }
 
     private bool IsLayerMatched(int layerMask, int objectLayer)
     {
