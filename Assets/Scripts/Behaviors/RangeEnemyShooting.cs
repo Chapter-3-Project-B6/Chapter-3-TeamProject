@@ -29,7 +29,7 @@ public class RangeEnemyShooting : MonoBehaviour
             float angle = spreadAngle * i / numberOfProjectiles;
             Vector2 direction = RotateVector2(transform.right, angle);
 
-            GameObject obj = SpawnManager.instance.ObjectPool.SpawnFromPool(currentStat.nameTag);
+            GameObject obj = ObjectPool.Instance.SpawnFromPool(currentStat.nameTag);
             ProjectileController attackController = obj.GetComponent<ProjectileController>();
 
             obj.transform.position = transform.position;

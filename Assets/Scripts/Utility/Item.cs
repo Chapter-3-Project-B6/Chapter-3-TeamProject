@@ -22,9 +22,31 @@ public class Item : MonoBehaviour
             {
                 case Item_Type.IT_Heart:
                     if (collision.TryGetComponent<HealthSystem>(out HealthSystem healthSystem))
+                    {
                         healthSystem.ChangeHealth(3);
-                        break;
+                    }
+                    gameObject.SetActive(false);
+                    break;
+                case Item_Type.IT_Boom:
+                    Explosion();
+                    gameObject.SetActive(false);
+                    break;
             }
+        }
+    }
+
+    public void Explosion()
+    {
+        GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
+        for (int i = 0; i < enemys.Length; i++)
+        {
+            if (enemys[i].TryGetComponent<EnemyContactController>(out EnemyContactController enemy))
+                enemy.OnDie();
+        }
+        for (int i = 0; i < enemyBullets.Length; i++)
+        {
+            enemyBullets[i].SetActive(false);
         }
     }
 }

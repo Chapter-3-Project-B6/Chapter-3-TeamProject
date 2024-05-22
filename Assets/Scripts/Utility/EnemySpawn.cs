@@ -37,7 +37,7 @@ public class EnemySpawn : MonoBehaviour
 
         while (true)
         {
-            GameObject enemy = SpawnManager.instance.EnemyObjectPool.GetEnemy(enemyTag, false);
+            GameObject enemy = ObjectPool.Instance.GetEnemy(enemyTag, false);
 
             Vector2 spawnPosition = GetSpawnPosition();
             enemy.transform.position = spawnPosition;
@@ -51,7 +51,7 @@ public class EnemySpawn : MonoBehaviour
     {
         while (true)
         {
-            GameObject rangeEnemy = SpawnManager.instance.EnemyObjectPool.GetEnemy(rangeEnemyTag, false);
+            GameObject rangeEnemy = ObjectPool.Instance.GetEnemy(enemyTag, false);
 
             Vector2 spawnPosition = GetSpawnPosition();
             rangeEnemy.transform.position = spawnPosition;
@@ -61,7 +61,7 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    Vector3 GetSpawnPosition()
+    Vector2 GetSpawnPosition()
     {
         Vector3 spawnPosition = Vector3.zero;
 
