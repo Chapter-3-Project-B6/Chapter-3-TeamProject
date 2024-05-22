@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Threading;
+using TMPro;
 
 public class DestroyOnDeath : MonoBehaviour
 {
@@ -27,5 +29,11 @@ public class DestroyOnDeath : MonoBehaviour
 
         gameObject.SetActive(false);
         Destroy(gameObject);
+
+
     }
+
+
+
+
 }
