@@ -82,12 +82,21 @@ public class EnemyContactController : EnemyController
         Destroy(obj, 0.3f);
     }
 
+    private int randCount;
     private void DropItem()
     {
+        randCount = Random.Range(0, 100);
         GameObject obj;
 
-        obj = ObjectPool.Instance.SpawnFromPool("HealItem");
-        obj.transform.position = transform.position;
-
+        if (randCount < 10)
+        {
+            obj = ObjectPool.Instance.SpawnFromPool("HealItem");
+            obj.transform.position = transform.position;
+        }
+        else if (randCount < 20)
+        {
+            obj = ObjectPool.Instance.SpawnFromPool("Bomb");
+            obj.transform.position = transform.position;
+        }
     }
 }

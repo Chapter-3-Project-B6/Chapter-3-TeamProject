@@ -38,10 +38,15 @@ public class Item : MonoBehaviour
     public void Explosion()
     {
         GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemyBullets = GameObject.FindGameObjectsWithTag("EnemyBullet");
         for (int i = 0; i < enemys.Length; i++)
         {
             if (enemys[i].TryGetComponent<EnemyContactController>(out EnemyContactController enemy))
                 enemy.OnDie();
+        }
+        for (int i = 0; i < enemyBullets.Length; i++)
+        {
+            enemyBullets[i].SetActive(false);
         }
     }
 }
