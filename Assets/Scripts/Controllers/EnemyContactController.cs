@@ -24,7 +24,6 @@ public class EnemyContactController : EnemyController
     protected override void OnEnable()
     {
         dirTarget = DirTarget();
-
     }
 
     protected override void FixedUpdate()
@@ -53,6 +52,7 @@ public class EnemyContactController : EnemyController
         if (collision.tag == "Bullet")
         {
             OnDie();
+            AudioManager.instance.PlaySFX("EnemyDestroySFX");
         }
     }
 
