@@ -41,7 +41,7 @@ public class ObjectPool : MonoBehaviour
 
             for (int i = 0; i < pool.poolSize; i++)
             {
-                GameObject obj = Instantiate(pool.prefab, transform);
+                GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
                 objectPool.Enqueue(obj);
             }
@@ -61,6 +61,20 @@ public class ObjectPool : MonoBehaviour
         poolDictionary[tag].Enqueue(obj);
         obj.SetActive(true);
 
+        return obj;
+    }
+
+    public GameObject GetEnemy(string tag, bool isActive)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            return null;
+        }
+
+        GameObject obj = poolDictionary[tag].Dequeue();
+        poolDictionary[tag].Enqueue(obj);
+
+        obj.SetActive(isActive);
         return obj;
     }
 }

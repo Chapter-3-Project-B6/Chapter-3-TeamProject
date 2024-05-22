@@ -50,11 +50,7 @@ public class EnemyContactController : EnemyController
 
         if (collision.tag == "Bullet")
         {
-            GameManager.instance.Player1Score += 100;
-            GameObject obj = Instantiate(explosion);
-            obj.transform.position = this.transform.position;
-            gameObject.SetActive(false);
-            Destroy(obj, 0.3f);
+            OnDie();
         }
     }
 
@@ -74,5 +70,24 @@ public class EnemyContactController : EnemyController
     private void ShootTarget(Vector2 dir)
     {
         IsAttacking = true;
+    }
+
+    public void OnDie()
+    {
+        GameManager.instance.Player1Score += 100;
+        GameObject obj = Instantiate(explosion);
+        obj.transform.position = this.transform.position;
+        gameObject.SetActive(false);
+        DropItem();
+        Destroy(obj, 0.3f);
+    }
+
+    private void DropItem()
+    {
+        GameObject obj;
+
+        obj = ObjectPool.Instance.SpawnFromPool("HealItem");
+        obj.transform.position = transform.position;
+
     }
 }
