@@ -9,6 +9,7 @@ public class PlayerHP : MonoBehaviour
     private void Start()
     {
         healthSystem.OnDamage += ChangeHealth;
+        healthSystem.OnHeal += ChangeHealth;
         healthSystem.OnDeath += ChangeHealthOnDeath;
     }
 

@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
     private CharacterStatHandler _statHandler;
 
     public event Action<float> OnDamage;
-    public event Action OnHeal;
+    public event Action<float> OnHeal;
     public event Action OnDeath;
     public event Action OnInvincibilityEnd;
 
@@ -59,7 +59,7 @@ public class HealthSystem : MonoBehaviour
 
         if (amount >= 0)
         {
-            OnHeal?.Invoke();
+            OnHeal?.Invoke(CurrentHealth);
         }
         else
         {
